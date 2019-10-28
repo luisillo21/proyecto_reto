@@ -1,0 +1,306 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI (http://jax-ws.java.net). RI's version is Metro/2.3.2-b608 (trunk-7979; 2015-01-21T12:50:19+0000) JAXWS-RI/2.2.11-b150120.1832 JAXWS-API/2.2.12 JAXB-RI/2.2.12-b141219.1637 JAXB-API/2.2.13-b141020.1521 svn-revision#unknown. --><xs:schema xmlns:tns="http://Servicios/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://Servicios/">
+
+<xs:element name="Actualizar" type="tns:Actualizar"/>
+
+<xs:element name="ActualizarResponse" type="tns:ActualizarResponse"/>
+
+<xs:element name="Actualizar_datos" type="tns:Actualizar_datos"/>
+
+<xs:element name="Actualizar_datosResponse" type="tns:Actualizar_datosResponse"/>
+
+<xs:element name="Agregar_pregunta" type="tns:Agregar_pregunta"/>
+
+<xs:element name="Agregar_preguntaResponse" type="tns:Agregar_preguntaResponse"/>
+
+<xs:element name="Calcular_resultado" type="tns:Calcular_resultado"/>
+
+<xs:element name="Calcular_resultadoResponse" type="tns:Calcular_resultadoResponse"/>
+
+<xs:element name="Eliminar_alumno" type="tns:Eliminar_alumno"/>
+
+<xs:element name="Eliminar_alumnoResponse" type="tns:Eliminar_alumnoResponse"/>
+
+<xs:element name="Exception" type="tns:Exception"/>
+
+<xs:element name="Login_Sistema" type="tns:Login_Sistema"/>
+
+<xs:element name="Login_SistemaResponse" type="tns:Login_SistemaResponse"/>
+
+<xs:element name="Registro_usuario_administrador" type="tns:Registro_usuario_administrador"/>
+
+<xs:element name="Registro_usuario_administradorResponse" type="tns:Registro_usuario_administradorResponse"/>
+
+<xs:element name="Registro_usuario_alumno" type="tns:Registro_usuario_alumno"/>
+
+<xs:element name="Registro_usuario_alumnoResponse" type="tns:Registro_usuario_alumnoResponse"/>
+
+<xs:element name="Registro_usuario_profesor" type="tns:Registro_usuario_profesor"/>
+
+<xs:element name="Registro_usuario_profesorResponse" type="tns:Registro_usuario_profesorResponse"/>
+
+<xs:element name="actualizar_alumno" type="tns:actualizar_alumno"/>
+
+<xs:element name="actualizar_alumnoResponse" type="tns:actualizar_alumnoResponse"/>
+
+<xs:element name="eliminar_pregunta" type="tns:eliminar_pregunta"/>
+
+<xs:element name="eliminar_preguntaResponse" type="tns:eliminar_preguntaResponse"/>
+
+<xs:element name="guardar_notas" type="tns:guardar_notas"/>
+
+<xs:element name="guardar_notasResponse" type="tns:guardar_notasResponse"/>
+
+<xs:element name="hello" type="tns:hello"/>
+
+<xs:element name="helloResponse" type="tns:helloResponse"/>
+
+<xs:element name="listar_alumnos" type="tns:listar_alumnos"/>
+
+<xs:element name="listar_alumnosResponse" type="tns:listar_alumnosResponse"/>
+
+<xs:element name="traer_pregunta" type="tns:traer_pregunta"/>
+
+<xs:element name="traer_preguntaResponse" type="tns:traer_preguntaResponse"/>
+
+<xs:complexType name="Eliminar_alumno">
+<xs:sequence>
+<xs:element name="cedula" type="xs:string" minOccurs="0"/>
+<xs:element name="usuario_ing" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="Eliminar_alumnoResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="Exception">
+<xs:sequence>
+<xs:element name="message" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="Actualizar">
+<xs:sequence>
+<xs:element name="pregunta" type="xs:string" minOccurs="0"/>
+<xs:element name="respuesta" type="xs:string" minOccurs="0"/>
+<xs:element name="estado" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="ActualizarResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="actualizar_alumno">
+<xs:sequence>
+<xs:element name="nombre" type="xs:string" minOccurs="0"/>
+<xs:element name="apellido" type="xs:string" minOccurs="0"/>
+<xs:element name="cedula" type="xs:string" minOccurs="0"/>
+<xs:element name="curso" type="xs:int"/>
+<xs:element name="usuario" type="xs:string" minOccurs="0"/>
+<xs:element name="contrasenia" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="actualizar_alumnoResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="hello">
+<xs:sequence>
+<xs:element name="name" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="helloResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="listar_alumnos">
+<xs:sequence>
+<xs:element name="usuario" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="listar_alumnosResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:resultadosAlumnos" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="resultadosAlumnos">
+<xs:sequence>
+<xs:element name="apellido" type="xs:string" minOccurs="0"/>
+<xs:element name="curso" type="xs:int"/>
+<xs:element name="nombre" type="xs:string" minOccurs="0"/>
+<xs:element name="nombre_juego" type="xs:string" minOccurs="0"/>
+<xs:element name="total" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="Registro_usuario_profesor">
+<xs:sequence>
+<xs:element name="nombre" type="xs:string" minOccurs="0"/>
+<xs:element name="apellido" type="xs:string" minOccurs="0"/>
+<xs:element name="cedula" type="xs:string" minOccurs="0"/>
+<xs:element name="usuario" type="xs:string" minOccurs="0"/>
+<xs:element name="pass" type="xs:string" minOccurs="0"/>
+<xs:element name="usuario_ing" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="Registro_usuario_profesorResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="traer_pregunta">
+<xs:sequence>
+<xs:element name="pregunta" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="traer_preguntaResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:listaPreguntas" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="listaPreguntas">
+<xs:sequence>
+<xs:element name="activo" type="xs:boolean"/>
+<xs:element name="nombre_juego" type="xs:string" minOccurs="0"/>
+<xs:element name="pregunta" type="xs:string" minOccurs="0"/>
+<xs:element name="respuesta" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="Registro_usuario_alumno">
+<xs:sequence>
+<xs:element name="nombre" type="xs:string" minOccurs="0"/>
+<xs:element name="apellido" type="xs:string" minOccurs="0"/>
+<xs:element name="cedula" type="xs:string" minOccurs="0"/>
+<xs:element name="usuario" type="xs:string" minOccurs="0"/>
+<xs:element name="pass" type="xs:string" minOccurs="0"/>
+<xs:element name="curso" type="xs:int"/>
+<xs:element name="usuario_ing" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="Registro_usuario_alumnoResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="eliminar_pregunta">
+<xs:sequence>
+<xs:element name="pregunta" type="xs:string" minOccurs="0"/>
+<xs:element name="usuario_ing" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="eliminar_preguntaResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="Actualizar_datos">
+<xs:sequence>
+<xs:element name="nombre" type="xs:string" minOccurs="0"/>
+<xs:element name="apellido" type="xs:string" minOccurs="0"/>
+<xs:element name="cedula" type="xs:string" minOccurs="0"/>
+<xs:element name="usuario" type="xs:string" minOccurs="0"/>
+<xs:element name="pass" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="Actualizar_datosResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="Login_Sistema">
+<xs:sequence>
+<xs:element name="usuario" type="xs:string" minOccurs="0"/>
+<xs:element name="pass" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="Login_SistemaResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="Calcular_resultado">
+<xs:sequence>
+<xs:element name="usuario" type="xs:string" minOccurs="0"/>
+<xs:element name="nombre_juego" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="Calcular_resultadoResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="guardar_notas">
+<xs:sequence>
+<xs:element name="nombre_usuario" type="xs:string" minOccurs="0"/>
+<xs:element name="nombre_juego" type="xs:string" minOccurs="0"/>
+<xs:element name="pregunta" type="xs:string" minOccurs="0"/>
+<xs:element name="respuesta" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="guardar_notasResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="Registro_usuario_administrador">
+<xs:sequence>
+<xs:element name="nombre" type="xs:string" minOccurs="0"/>
+<xs:element name="apellido" type="xs:string" minOccurs="0"/>
+<xs:element name="cedula" type="xs:string" minOccurs="0"/>
+<xs:element name="usuario" type="xs:string" minOccurs="0"/>
+<xs:element name="pass" type="xs:string" minOccurs="0"/>
+<xs:element name="usuario_ing" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="Registro_usuario_administradorResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="Agregar_pregunta">
+<xs:sequence>
+<xs:element name="nombre_juego" type="xs:string" minOccurs="0"/>
+<xs:element name="pregunta" type="xs:string" minOccurs="0"/>
+<xs:element name="resouesta" type="xs:string" minOccurs="0"/>
+<xs:element name="usuario_ing" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="Agregar_preguntaResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

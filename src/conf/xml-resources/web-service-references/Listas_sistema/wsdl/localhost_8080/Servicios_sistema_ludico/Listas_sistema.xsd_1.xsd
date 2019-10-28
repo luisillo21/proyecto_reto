@@ -1,0 +1,182 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI (http://jax-ws.java.net). RI's version is Metro/2.3.2-b608 (trunk-7979; 2015-01-21T12:50:19+0000) JAXWS-RI/2.2.11-b150120.1832 JAXWS-API/2.2.12 JAXB-RI/2.2.12-b141219.1637 JAXB-API/2.2.13-b141020.1521 svn-revision#unknown. --><xs:schema xmlns:tns="http://Servicios/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://Servicios/">
+
+<xs:element name="Exception" type="tns:Exception"/>
+
+<xs:element name="Historial" type="tns:Historial"/>
+
+<xs:element name="HistorialResponse" type="tns:HistorialResponse"/>
+
+<xs:element name="Informacion_alumnos" type="tns:Informacion_alumnos"/>
+
+<xs:element name="Informacion_alumnosResponse" type="tns:Informacion_alumnosResponse"/>
+
+<xs:element name="Lista_profesores" type="tns:Lista_profesores"/>
+
+<xs:element name="Lista_profesoresResponse" type="tns:Lista_profesoresResponse"/>
+
+<xs:element name="Listado_preguntas" type="tns:Listado_preguntas"/>
+
+<xs:element name="Listado_preguntasResponse" type="tns:Listado_preguntasResponse"/>
+
+<xs:element name="Listar_juegos" type="tns:Listar_juegos"/>
+
+<xs:element name="Listar_juegosResponse" type="tns:Listar_juegosResponse"/>
+
+<xs:element name="Profesor_info" type="tns:Profesor_info"/>
+
+<xs:element name="Profesor_infoResponse" type="tns:Profesor_infoResponse"/>
+
+<xs:element name="info_alumno" type="tns:info_alumno"/>
+
+<xs:element name="info_alumnoResponse" type="tns:info_alumnoResponse"/>
+
+<xs:complexType name="info_alumno">
+<xs:sequence>
+<xs:element name="usuario" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="info_alumnoResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:alumno" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="alumno">
+<xs:sequence>
+<xs:element name="apellido" type="xs:string" minOccurs="0"/>
+<xs:element name="cedula" type="xs:string" minOccurs="0"/>
+<xs:element name="contrasenia" type="xs:string" minOccurs="0"/>
+<xs:element name="curso" type="xs:int"/>
+<xs:element name="nombre" type="xs:string" minOccurs="0"/>
+<xs:element name="usuario" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="Exception">
+<xs:sequence>
+<xs:element name="message" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="Historial">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="HistorialResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:genrHistorial" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="genrHistorial">
+<xs:sequence>
+<xs:element name="accion" type="xs:string" minOccurs="0"/>
+<xs:element name="descripcion" type="xs:string" minOccurs="0"/>
+<xs:element name="fecha" type="xs:string" minOccurs="0"/>
+<xs:element name="usuario" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="Listado_preguntas">
+<xs:sequence>
+<xs:element name="nombre_juego" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="Listado_preguntasResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:listaPreguntas" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="listaPreguntas">
+<xs:sequence>
+<xs:element name="activo" type="xs:boolean"/>
+<xs:element name="nombre_juego" type="xs:string" minOccurs="0"/>
+<xs:element name="pregunta" type="xs:string" minOccurs="0"/>
+<xs:element name="respuesta" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="Lista_profesores">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="Lista_profesoresResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:listaProfesor" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="listaProfesor">
+<xs:sequence>
+<xs:element name="apellido" type="xs:string" minOccurs="0"/>
+<xs:element name="cedula" type="xs:string" minOccurs="0"/>
+<xs:element name="curso" type="xs:int"/>
+<xs:element name="nombre" type="xs:string" minOccurs="0"/>
+<xs:element name="usuario" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="Listar_juegos">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="Listar_juegosResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:listaJuegos" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="listaJuegos">
+<xs:sequence>
+<xs:element name="cantidad_de_preguntas" type="xs:int"/>
+<xs:element name="nombre_juego" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="Informacion_alumnos">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="Informacion_alumnosResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:listaAlumnos" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="listaAlumnos">
+<xs:sequence>
+<xs:element name="apellido" type="xs:string" minOccurs="0"/>
+<xs:element name="cedula" type="xs:string" minOccurs="0"/>
+<xs:element name="curso" type="xs:int"/>
+<xs:element name="nombre" type="xs:string" minOccurs="0"/>
+<xs:element name="nombre_juego" type="xs:string" minOccurs="0"/>
+<xs:element name="total" type="xs:int"/>
+<xs:element name="usuario" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="Profesor_info">
+<xs:sequence>
+<xs:element name="usuario" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="Profesor_infoResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:profesor" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="profesor">
+<xs:sequence>
+<xs:element name="apellido" type="xs:string" minOccurs="0"/>
+<xs:element name="cedula" type="xs:string" minOccurs="0"/>
+<xs:element name="contrasenia" type="xs:string" minOccurs="0"/>
+<xs:element name="nombre" type="xs:string" minOccurs="0"/>
+<xs:element name="usuario" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>
